@@ -20,7 +20,7 @@ class REModel(nn.Module):
 
         scale = 2 if args.entity_marker else 1
         self.rel_fc = nn.Linear(args.hidden_size*scale, args.rel_num)
-        self.bert = BertModel.from_pretrained('bert-base-uncased')
+        self.bert = BertModel.from_pretrained(args.model_name)
         if args.ckpt_to_load != "None":
             print("********* load from ckpt/"+args.ckpt_to_load+" ***********")
             ckpt = torch.load("../../../pretrain/ckpt/"+args.ckpt_to_load)

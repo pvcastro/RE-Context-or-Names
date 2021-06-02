@@ -65,8 +65,8 @@ class CP(nn.Module):
     """
     def __init__(self, args):
         super(CP, self).__init__()
-        self.model = BertForMaskedLM.from_pretrained('bert-base-uncased')
-        self.tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+        self.model = BertForMaskedLM.from_pretrained(args.model_name)
+        self.tokenizer = BertTokenizer.from_pretrained(args.model_name)
         self.ntxloss = NTXentLoss(temperature=args.temperature)
         self.args = args 
     
@@ -86,15 +86,15 @@ class CP(nn.Module):
 
         m_input, m_labels = mask_tokens(input.cpu(), self.tokenizer, not_mask_pos)
         m_outputs = self.model(input_ids=m_input, labels=m_labels, attention_mask=mask)
-        m_loss = m_outputs[1]
+        m_loss = m_outputs[0]
 
         outputs = m_outputs
 
         # entity marker starter
         batch_size = input.size()[0]
         indice = torch.arange(0, batch_size)
-        h_state = outputs[0][indice, h_pos] # (batch_size * 2, hidden_size)
-        t_state = outputs[0][indice, t_pos]
+        h_state = outputs[1][indice, h_pos] # (batch_size * 2, hidden_size)
+        t_state = outputs[1][indice, t_pos]
         state = torch.cat((h_state, t_state), 1)
 
         r_loss = self.ntxloss(state, label)

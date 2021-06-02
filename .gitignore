@@ -13,3 +13,5 @@ pretrain/data
 **/*.pyc
 
 **/*.swp
+
+**/*.th

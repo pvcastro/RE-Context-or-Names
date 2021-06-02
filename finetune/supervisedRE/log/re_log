@@ -13,3 +13,18 @@ ckpt_cp	wiki80	Sun Nov 15 23:58:37 2020
 ckpt_cp	wiki80	Mon Nov 16 00:06:30 2020
 @RESULT: Best Dev score is 0.787, Test score is 0.817
 --------------------------------------------------------------
+bert-base	tacred	Wed Apr  7 05:39:04 2021
+@RESULT: Best Dev score is 0.679, Test score is 0.671
+--------------------------------------------------------------
+ckpt_cp/ckpt_of_step_68000	tacred	Thu Apr  8 06:33:33 2021
+@RESULT: Best Dev score is 0.693, Test score is 0.689
+--------------------------------------------------------------
+bert-base	tacred	Thu Apr  8 14:17:01 2021
+@RESULT: Best Dev score is 0.690, Test score is 0.682
+--------------------------------------------------------------
+bert-base	datalawyer	Sat May 29 04:13:41 2021
+@RESULT: Best Dev score is 0.973, Test score is 0.975
+--------------------------------------------------------------
+bert-base	datalawyer	Tue Jun  1 14:58:47 2021
+@RESULT: Best Dev score is 0.894, Test score is 0.846
+--------------------------------------------------------------

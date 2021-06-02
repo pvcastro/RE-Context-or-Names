@@ -1,4 +1,5 @@
 
+from tqdm import tqdm
 import json 
 import random
 import os 
@@ -40,7 +41,7 @@ class CPDataset(data.Dataset):
         """
         self.path = path 
         self.args = args 
-        data = json.load(open(os.path.join(path, "cpdata.json")))
+        data = json.load(open(os.path.join(path, "cpdata_dedup.json")))
         rel2scope = json.load(open(os.path.join(path, "rel2scope.json")))
         entityMarker = EntityMarker()
 
@@ -53,12 +54,12 @@ class CPDataset(data.Dataset):
         # Distant supervised label for sentence.
         # Sentences whose label are the same in a batch 
         # is positive pair, otherwise negative pair.
-        for i, rel in enumerate(rel2scope.keys()):
+        for i, rel in tqdm(enumerate(rel2scope.keys()), "relation types"):
             scope = rel2scope[rel]
             for j in range(scope[0], scope[1]):
                 self.label[j] = i
 
-        for i, sentence in enumerate(data):
+        for i, sentence in tqdm(enumerate(data), "sentences"):
             h_flag = random.random() > args.alpha
             t_flag = random.random() > args.alpha
             h_p = sentence["h"]["pos"][0] 
@@ -123,7 +124,7 @@ class CPDataset(data.Dataset):
             pos_pair = self.__pos_pair__(scope)
             self.pos_pair.extend(pos_pair)
 
-        print("Postive pair's number is %d" % len(self.pos_pair))
+        print("Positive pair's number is %d" % len(self.pos_pair))
 
     def __len__(self):
         """Number of instances in an epoch.

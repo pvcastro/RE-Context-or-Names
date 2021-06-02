@@ -2,7 +2,9 @@
 import os 
 import re
 import ast 
-import sys 
+import sys
+import tqdm
+
 sys.path.append("..")
 import json 
 import pdb
@@ -47,7 +49,7 @@ class REDataset(data.Dataset):
         self.t_pos = np.zeros((tot_instance), dtype=int)
         self.label = np.zeros((tot_instance), dtype=int)
 
-        for i, ins in enumerate(data):
+        for i, ins in enumerate(tqdm.tqdm(data)):
             self.label[i] = rel2id[ins["relation"]]            
             # tokenize
             if args.mode == "CM":

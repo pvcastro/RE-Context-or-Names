@@ -128,7 +128,7 @@ def process_data_for_CP(data):
     
     if not os.path.exists("../data/CP"):
         os.mkdir("../data/CP")
-    json.dump(list_data, open("../data/CP/cpdata.json","w"))
+    json.dump(list_data, open("../data/CP/cpdata.json", "w"))
     json.dump(rel2scope, open("../data/CP/rel2scope.json", 'w'))
 
 
@@ -262,7 +262,11 @@ if __name__ == "__main__":
     args = parser.parse_args()
     set_seed(42)
 
-    data = json.load(open("../data/exclude_fewrel_distant.json"))
+    data = json.load(open("../data/exclude_fewrel_distant.json", encoding='utf8', mode='r'))
+    # _dict = defaultdict(list)
+    # for key in data.keys():
+    #     _dict[key] = data[key][0:10]
+    # data = _dict
     if args.dataset == "CP":
         process_data_for_CP(data)
 

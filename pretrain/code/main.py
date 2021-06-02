@@ -88,10 +88,10 @@ def train(args, model, train_dataset):
             loss = m_loss + r_loss
             if args.gradient_accumulation_steps > 1:
                 loss = loss / args.gradient_accumulation_steps
-            
+
             with amp.scale_loss(loss, optimizer) as scaled_loss:
                 scaled_loss.backward()
-            
+
             if step % args.gradient_accumulation_steps == 0:
                 nn.utils.clip_grad_norm_(amp.master_params(optimizer), args.max_grad_norm)
                 optimizer.step()
@@ -104,22 +104,27 @@ def train(args, model, train_dataset):
                         os.mkdir("../ckpt")
                     if not os.path.exists("../ckpt/"+args.save_dir):
                         os.mkdir("../ckpt/"+args.save_dir)
-                    ckpt = {
-                        'bert-base': model.module.model.bert.state_dict(),
-                    }
+                    if type(model) == torch.nn.parallel.DistributedDataParallel:
+                        ckpt = {
+                            'bert-base': model.module.model.bert.state_dict()
+                        }
+                    else:
+                        ckpt = {
+                            'bert-base': model.model.bert.state_dict()
+                        }
                     torch.save(ckpt, os.path.join("../ckpt/"+args.save_dir, "ckpt_of_step_"+str(global_step)))
 
                 # if args.local_rank in [0, -1] and global_step % 5 == 0:
                 #     step_record.append(global_step)
                 #     loss_record.append(loss)
-                
+
                 # if args.local_rank in [0, -1] and global_step % 500 == 0:
                 #     log_loss(step_record, loss_record)
-                
+
                 if args.local_rank in [0, -1]:
                     sys.stdout.write("step: %d, shcedule: %.3f, mlm_loss: %.6f relation_loss: %.6f\r" % (global_step, global_step/step_tot, m_loss, r_loss))
                     sys.stdout.flush()
-        
+
         if args.train_sample:
             print("sampling...")
             train_dataloader.dataset.__sample__()
@@ -145,6 +150,8 @@ if __name__ == "__main__":
 
     parser.add_argument("--model", dest="model", type=str,
                         default="", help="{MTB, CP}")
+    parser.add_argument("--model_name", dest="model_name", type=str,
+                        default="bert-base-uncased", help="type of bert model")
     parser.add_argument("--train_sample",action="store_true",
                         help="dynamic sample or not")
     parser.add_argument("--max_length", dest="max_length", type=int,
@@ -210,7 +217,7 @@ if __name__ == "__main__":
         train_dataset = MTBDataset("../data/MTB", args)
     elif args.model == "CP":
         model = CP(args).to(args.device)
-        train_dataset = CPDataset("../data/CP", args)
+        train_dataset = CPDataset("../data/CP/datalawyer", args)
     else:
         raise Exception("No such model! Please make sure that `model` takes the value in {MTB, CP}")
 

@@ -4,3 +4,63 @@ Namespace(adam_epsilon=1e-08, alpha=0.3, bag_size=2, batch_size_per_gpu=32, cuda
 Mon Nov 16 00:10:49 2020
 Namespace(adam_epsilon=1e-08, alpha=0.3, bag_size=2, batch_size_per_gpu=32, cuda='4,5,6,7', device=device(type='cuda', index=0), gradient_accumulation_steps=2, hidden_size=768, local_rank=0, lr=3e-05, max_epoch=20, max_grad_norm=1, max_length=64, model='MTB', n_gpu=4, save_dir='ckpt_mtb', save_step=5000, seed=42, temperature=0.05, train_sample=True, warmup_steps=500, weight_decay=1e-05)
 ----------------------------------------------------------------------------
+Fri Mar 26 16:40:26 2021
+Namespace(adam_epsilon=1e-08, alpha=0.3, bag_size=2, batch_size_per_gpu=2, cuda='0', device=device(type='cuda'), gradient_accumulation_steps=1, hidden_size=768, local_rank=-1, lr=5e-05, max_epoch=3, max_grad_norm=1, max_length=64, model='CP', n_gpu=1, save_dir='', save_step=10000, seed=42, temperature=0.05, train_sample=False, warmup_steps=500, weight_decay=1e-05)
+----------------------------------------------------------------------------
+Tue Mar 30 14:20:34 2021
+Namespace(adam_epsilon=1e-08, alpha=0.3, bag_size=2, batch_size_per_gpu=2, cuda='0', device=device(type='cuda'), gradient_accumulation_steps=1, hidden_size=768, local_rank=-1, lr=5e-05, max_epoch=3, max_grad_norm=1, max_length=64, model='CP', n_gpu=1, save_dir='', save_step=10000, seed=42, temperature=0.05, train_sample=False, warmup_steps=500, weight_decay=1e-05)
+----------------------------------------------------------------------------
+Tue Mar 30 15:26:07 2021
+Namespace(adam_epsilon=1e-08, alpha=0.3, bag_size=2, batch_size_per_gpu=2, cuda='0', device=device(type='cuda'), gradient_accumulation_steps=1, hidden_size=768, local_rank=-1, lr=5e-05, max_epoch=3, max_grad_norm=1, max_length=64, model='CP', n_gpu=1, save_dir='', save_step=10000, seed=42, temperature=0.05, train_sample=False, warmup_steps=500, weight_decay=1e-05)
+----------------------------------------------------------------------------
+Tue Mar 30 17:29:20 2021
+Namespace(adam_epsilon=1e-08, alpha=0.3, bag_size=2, batch_size_per_gpu=2, cuda='0', device=device(type='cuda'), gradient_accumulation_steps=1, hidden_size=768, local_rank=-1, lr=5e-05, max_epoch=3, max_grad_norm=1, max_length=64, model='CP', n_gpu=1, save_dir='', save_step=10000, seed=42, temperature=0.05, train_sample=False, warmup_steps=500, weight_decay=1e-05)
+----------------------------------------------------------------------------
+Tue Mar 30 18:26:24 2021
+Namespace(adam_epsilon=1e-08, alpha=0.3, bag_size=2, batch_size_per_gpu=2, cuda='0', device=device(type='cuda'), gradient_accumulation_steps=1, hidden_size=768, local_rank=-1, lr=5e-05, max_epoch=3, max_grad_norm=1, max_length=64, model='CP', n_gpu=1, save_dir='', save_step=10000, seed=42, temperature=0.05, train_sample=False, warmup_steps=500, weight_decay=1e-05)
+----------------------------------------------------------------------------
+Tue Mar 30 19:16:25 2021
+Namespace(adam_epsilon=1e-08, alpha=0.3, bag_size=2, batch_size_per_gpu=2, cuda='0', device=device(type='cuda'), gradient_accumulation_steps=1, hidden_size=768, local_rank=-1, lr=5e-05, max_epoch=3, max_grad_norm=1, max_length=64, model='CP', n_gpu=1, save_dir='', save_step=10000, seed=42, temperature=0.05, train_sample=False, warmup_steps=500, weight_decay=1e-05)
+----------------------------------------------------------------------------
+Tue Mar 30 19:42:06 2021
+Namespace(adam_epsilon=1e-08, alpha=0.3, bag_size=2, batch_size_per_gpu=2, cuda='0', device=device(type='cuda'), gradient_accumulation_steps=1, hidden_size=768, local_rank=-1, lr=5e-05, max_epoch=3, max_grad_norm=1, max_length=64, model='CP', n_gpu=1, save_dir='', save_step=10000, seed=42, temperature=0.05, train_sample=False, warmup_steps=500, weight_decay=1e-05)
+----------------------------------------------------------------------------
+Wed Mar 31 12:53:01 2021
+Namespace(adam_epsilon=1e-08, alpha=0.3, bag_size=2, batch_size_per_gpu=2, cuda='0', device=device(type='cuda'), gradient_accumulation_steps=1, hidden_size=768, local_rank=-1, lr=5e-05, max_epoch=3, max_grad_norm=1, max_length=64, model='CP', n_gpu=1, save_dir='', save_step=10000, seed=42, temperature=0.05, train_sample=False, warmup_steps=500, weight_decay=1e-05)
+----------------------------------------------------------------------------
+Wed Mar 31 14:25:32 2021
+Namespace(adam_epsilon=1e-08, alpha=0.3, bag_size=2, batch_size_per_gpu=2, cuda='0', device=device(type='cuda'), gradient_accumulation_steps=1, hidden_size=768, local_rank=-1, lr=5e-05, max_epoch=3, max_grad_norm=1, max_length=64, model='CP', n_gpu=1, save_dir='', save_step=10000, seed=42, temperature=0.05, train_sample=False, warmup_steps=500, weight_decay=1e-05)
+----------------------------------------------------------------------------
+Wed Mar 31 14:43:39 2021
+Namespace(adam_epsilon=1e-08, alpha=0.3, bag_size=2, batch_size_per_gpu=2, cuda='0', device=device(type='cuda'), gradient_accumulation_steps=1, hidden_size=768, local_rank=-1, lr=5e-05, max_epoch=3, max_grad_norm=1, max_length=64, model='CP', n_gpu=1, save_dir='', save_step=10000, seed=42, temperature=0.05, train_sample=False, warmup_steps=500, weight_decay=1e-05)
+----------------------------------------------------------------------------
+Wed Mar 31 14:49:57 2021
+Namespace(adam_epsilon=1e-08, alpha=0.3, bag_size=2, batch_size_per_gpu=2, cuda='0', device=device(type='cuda'), gradient_accumulation_steps=1, hidden_size=768, local_rank=-1, lr=5e-05, max_epoch=3, max_grad_norm=1, max_length=64, model='CP', n_gpu=1, save_dir='', save_step=10000, seed=42, temperature=0.05, train_sample=False, warmup_steps=500, weight_decay=1e-05)
+----------------------------------------------------------------------------
+Wed Mar 31 15:06:22 2021
+Namespace(adam_epsilon=1e-08, alpha=0.3, bag_size=2, batch_size_per_gpu=4, cuda='0', device=device(type='cuda'), gradient_accumulation_steps=16, hidden_size=768, local_rank=-1, lr=3e-05, max_epoch=20, max_grad_norm=1, max_length=64, model='CP', n_gpu=1, save_dir='ckpt_cp', save_step=500, seed=42, temperature=0.05, train_sample=True, warmup_steps=500, weight_decay=1e-05)
+----------------------------------------------------------------------------
+Wed Mar 31 15:58:54 2021
+Namespace(adam_epsilon=1e-08, alpha=0.3, bag_size=2, batch_size_per_gpu=4, cuda='0', device=device(type='cuda'), gradient_accumulation_steps=16, hidden_size=768, local_rank=-1, lr=3e-05, max_epoch=20, max_grad_norm=1, max_length=64, model='CP', n_gpu=1, save_dir='ckpt_cp', save_step=500, seed=42, temperature=0.05, train_sample=True, warmup_steps=500, weight_decay=1e-05)
+----------------------------------------------------------------------------
+Wed Mar 31 16:38:01 2021
+Namespace(adam_epsilon=1e-08, alpha=0.3, bag_size=2, batch_size_per_gpu=4, cuda='0', device=device(type='cuda'), gradient_accumulation_steps=16, hidden_size=768, local_rank=-1, lr=3e-05, max_epoch=20, max_grad_norm=1, max_length=64, model='CP', n_gpu=1, save_dir='ckpt_cp', save_step=500, seed=42, temperature=0.05, train_sample=True, warmup_steps=500, weight_decay=1e-05)
+----------------------------------------------------------------------------
+Fri May 28 10:06:24 2021
+Namespace(adam_epsilon=1e-08, alpha=0.3, bag_size=2, batch_size_per_gpu=4, cuda='0', device=device(type='cuda'), gradient_accumulation_steps=16, hidden_size=768, local_rank=-1, lr=3e-05, max_epoch=20, max_grad_norm=1, max_length=64, model='CP', n_gpu=1, save_dir='ckpt_cp', save_step=500, seed=42, temperature=0.05, train_sample=True, warmup_steps=500, weight_decay=1e-05)
+----------------------------------------------------------------------------
+Wed Jun  2 12:33:59 2021
+Namespace(adam_epsilon=1e-08, alpha=0.3, bag_size=2, batch_size_per_gpu=4, cuda='0', device=device(type='cuda'), gradient_accumulation_steps=16, hidden_size=768, local_rank=-1, lr=3e-05, max_epoch=20, max_grad_norm=1, max_length=64, model='CP', model_name='neuralmind/bert-base-portuguese-cased', n_gpu=1, save_dir='ckpt_cp_datalawyer', save_step=500, seed=42, temperature=0.05, train_sample=True, warmup_steps=500, weight_decay=1e-05)
+----------------------------------------------------------------------------
+Wed Jun  2 14:49:07 2021
+Namespace(adam_epsilon=1e-08, alpha=0.3, bag_size=2, batch_size_per_gpu=4, cuda='0', device=device(type='cuda'), gradient_accumulation_steps=16, hidden_size=768, local_rank=-1, lr=3e-05, max_epoch=20, max_grad_norm=1, max_length=64, model='CP', model_name='neuralmind/bert-base-portuguese-cased', n_gpu=1, save_dir='ckpt_cp_datalawyer', save_step=500, seed=42, temperature=0.05, train_sample=True, warmup_steps=500, weight_decay=1e-05)
+----------------------------------------------------------------------------
+Wed Jun  2 15:55:30 2021
+Namespace(adam_epsilon=1e-08, alpha=0.3, bag_size=2, batch_size_per_gpu=8, cuda='0', device=device(type='cuda'), gradient_accumulation_steps=16, hidden_size=768, local_rank=-1, lr=3e-05, max_epoch=20, max_grad_norm=1, max_length=64, model='CP', model_name='neuralmind/bert-base-portuguese-cased', n_gpu=1, save_dir='ckpt_cp_datalawyer', save_step=500, seed=42, temperature=0.05, train_sample=True, warmup_steps=500, weight_decay=1e-05)
+----------------------------------------------------------------------------
+Wed Jun  2 15:58:50 2021
+Namespace(adam_epsilon=1e-08, alpha=0.3, bag_size=2, batch_size_per_gpu=8, cuda='0', device=device(type='cuda'), gradient_accumulation_steps=16, hidden_size=768, local_rank=-1, lr=3e-05, max_epoch=20, max_grad_norm=1, max_length=512, model='CP', model_name='neuralmind/bert-base-portuguese-cased', n_gpu=1, save_dir='ckpt_cp_datalawyer', save_step=500, seed=42, temperature=0.05, train_sample=True, warmup_steps=500, weight_decay=1e-05)
+----------------------------------------------------------------------------
+Wed Jun  2 16:05:18 2021
+Namespace(adam_epsilon=1e-08, alpha=0.3, bag_size=2, batch_size_per_gpu=8, cuda='0', device=device(type='cuda'), gradient_accumulation_steps=32, hidden_size=768, local_rank=-1, lr=3e-05, max_epoch=20, max_grad_norm=1, max_length=512, model='CP', model_name='neuralmind/bert-base-portuguese-cased', n_gpu=1, save_dir='ckpt_cp_datalawyer', save_step=500, seed=42, temperature=0.05, train_sample=True, warmup_steps=500, weight_decay=1e-05)
+----------------------------------------------------------------------------
