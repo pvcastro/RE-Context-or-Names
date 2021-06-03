@@ -24,7 +24,7 @@ class REModel(nn.Module):
         if args.ckpt_to_load != "None":
             print("********* load from ckpt/"+args.ckpt_to_load+" ***********")
             ckpt = torch.load("../../../pretrain/ckpt/"+args.ckpt_to_load)
-            self.bert.load_state_dict(ckpt["bert-base"])
+            self.bert.load_state_dict(ckpt["bert-base"], strict=False)
         else:
             print("*******No ckpt to load, Let's use bert base!*******")
         
