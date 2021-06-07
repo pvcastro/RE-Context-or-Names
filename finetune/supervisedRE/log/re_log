@@ -28,3 +28,9 @@ bert-base	datalawyer	Sat May 29 04:13:41 2021
 bert-base	datalawyer	Tue Jun  1 14:58:47 2021
 @RESULT: Best Dev score is 0.894, Test score is 0.846
 --------------------------------------------------------------
+ckpt_cp_datalawyer/ckpt_of_step_10000	datalawyer	Fri Jun  4 06:59:07 2021
+@RESULT: Best Dev score is 0.899, Test score is 0.869
+--------------------------------------------------------------
+ckpt_cp_datalawyer/ckpt_of_step_10000	datalawyer	Sat Jun  5 17:32:08 2021
+@RESULT: Best Dev score is 0.958, Test score is 0.911
+--------------------------------------------------------------

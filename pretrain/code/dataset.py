@@ -43,7 +43,7 @@ class CPDataset(data.Dataset):
         self.args = args 
         data = json.load(open(os.path.join(path, "cpdata_dedup.json")))
         rel2scope = json.load(open(os.path.join(path, "rel2scope.json")))
-        entityMarker = EntityMarker()
+        entityMarker = EntityMarker(args)
 
         self.tokens = np.zeros((len(data), args.max_length), dtype=int)
         self.mask = np.zeros((len(data), args.max_length), dtype=int)

@@ -22,7 +22,8 @@ class EntityMarker():
         args: Args from command line. 
     """
     def __init__(self, args=None):
-        self.tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
+        self.tokenizer = BertTokenizer.from_pretrained(args.model_name, do_basic_tokenize=False)
+        self.do_lower_case = 'uncased' in args.model_name
         self.h_pattern = re.compile("\* h \*")
         self.t_pattern = re.compile("\^ t \^")
         self.err = 0
@@ -75,7 +76,8 @@ class EntityMarker():
         h_mention = []
         t_mention = []
         for i, token in enumerate(raw_text):
-            token = token.lower()    
+            if self.do_lower_case:
+                token = token.lower()
             if i >= h_pos_li[0] and i < h_pos_li[-1]:
                 if i == h_pos_li[0]:
                     tokens += ['*', 'h', '*']

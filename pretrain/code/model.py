@@ -66,7 +66,7 @@ class CP(nn.Module):
     def __init__(self, args):
         super(CP, self).__init__()
         self.model = BertForMaskedLM.from_pretrained(args.model_name)
-        self.tokenizer = BertTokenizer.from_pretrained(args.model_name)
+        self.tokenizer = BertTokenizer.from_pretrained(args.model_name, do_basic_tokenize=False)
         self.ntxloss = NTXentLoss(temperature=args.temperature)
         self.args = args 
     

@@ -22,9 +22,21 @@ class REModel(nn.Module):
         self.rel_fc = nn.Linear(args.hidden_size*scale, args.rel_num)
         self.bert = BertModel.from_pretrained(args.model_name)
         if args.ckpt_to_load != "None":
-            print("********* load from ckpt/"+args.ckpt_to_load+" ***********")
-            ckpt = torch.load("../../../pretrain/ckpt/"+args.ckpt_to_load)
-            self.bert.load_state_dict(ckpt["bert-base"], strict=False)
+            if type(args.ckpt_to_load) == str:
+                if args.ckpt_to_load.startswith('save_dir'):
+                    print("********* load from " + args.ckpt_to_load + " ***********")
+                    ckpt = torch.load("../" + args.ckpt_to_load)
+                    state_dict = {k.replace('module.', ''): v for k, v in ckpt.items()}
+                    self.load_state_dict(state_dict, strict=False)
+                else:
+                    print("********* load from ckpt/"+args.ckpt_to_load+" ***********")
+                    ckpt = torch.load("../../../pretrain/ckpt/"+args.ckpt_to_load)
+                    self.bert.load_state_dict(ckpt["bert-base"], strict=False)
+            else:
+                print("********* load from " + str(args.ckpt_to_load) + " ***********")
+                ckpt = torch.load(args.ckpt_to_load)
+                state_dict = {k.replace('module.', ''): v for k, v in ckpt.items()}
+                self.load_state_dict(state_dict, strict=False)
         else:
             print("*******No ckpt to load, Let's use bert base!*******")
         
