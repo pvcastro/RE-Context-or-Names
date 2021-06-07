@@ -65,7 +65,7 @@ class EntityMarker():
             "* h * founded ^ t ^ ."
 
             Then, replace pattern:
-            "[CLS] [unused0] [unused4] [unused1] founded [unused2] microsoft [unused3] . [SEP]"
+            "[CLS] [unused1] [unused4] [unused2] founded [unused3] microsoft [unused4] . [SEP]"
 
             Finally, find the postions of entities and convert tokenized sentence to ids:
             [101, 1, 5, 2, 2631, 3, 7513, 4, 1012, 102]
@@ -110,23 +110,23 @@ class EntityMarker():
             p_tail = t_type
 
         if h_blank:
-            p_text = self.h_pattern.sub("[unused0] [unused4] [unused1]", p_text)
+            p_text = self.h_pattern.sub("[unused1] [unused5] [unused2]", p_text)
         else:
-            p_text = self.h_pattern.sub("[unused0] "+p_head+" [unused1]", p_text)
+            p_text = self.h_pattern.sub("[unused1] "+p_head+" [unused2]", p_text)
         if t_blank:
-            p_text = self.t_pattern.sub("[unused2] [unused5] [unused3]", p_text)
+            p_text = self.t_pattern.sub("[unused3] [unused6] [unused4]", p_text)
         else:
-            p_text = self.t_pattern.sub("[unused2] "+p_tail+" [unused3]", p_text)
+            p_text = self.t_pattern.sub("[unused3] "+p_tail+" [unused4]", p_text)
     
         f_text = ("[CLS] " + p_text + " [SEP]").split()
         # If h_pos_li and t_pos_li overlap, we can't find head entity or tail entity.
         try:
-            h_pos = f_text.index("[unused0]")
+            h_pos = f_text.index("[unused1]")
         except:
             self.err += 1
             h_pos = 0
         try:
-            t_pos = f_text.index("[unused2]") 
+            t_pos = f_text.index("[unused3]")
         except:
             self.err += 1
             t_pos = 0
@@ -156,15 +156,15 @@ class EntityMarker():
         tokens = ['[CLS]',]
         if h_first:
             h_pos = 1
-            tokens += ['[unused0]',] + tokenized_head + ['[unused1]',]
+            tokens += ['[unused1]',] + tokenized_head + ['[unused2]',]
             t_pos = len(tokens)
-            tokens += ['[unused2]',] + tokenized_tail + ['[unused3]',]
+            tokens += ['[unused3]',] + tokenized_tail + ['[unused4]',]
             
         else:
             t_pos = 1
-            tokens += ['[unused2]',] + tokenized_tail + ['[unused3]',]
+            tokens += ['[unused3]',] + tokenized_tail + ['[unused4]',]
             h_pos = len(tokens)
-            tokens += ['[unused0]',] + tokenized_head + ['[unused1]',]
+            tokens += ['[unused1]',] + tokenized_head + ['[unused2]',]
 
         tokens.append('[SEP]')
         tokenized_input = self.tokenizer.convert_tokens_to_ids(tokens)
