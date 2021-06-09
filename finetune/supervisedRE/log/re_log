@@ -34,3 +34,12 @@ ckpt_cp_datalawyer/ckpt_of_step_10000	datalawyer	Fri Jun  4 06:59:07 2021
 ckpt_cp_datalawyer/ckpt_of_step_10000	datalawyer	Sat Jun  5 17:32:08 2021
 @RESULT: Best Dev score is 0.958, Test score is 0.911
 --------------------------------------------------------------
+ckpt_cp_datalawyer/ckpt_of_step_10000	datalawyer	Tue Jun  8 01:35:01 2021
+@RESULT: Best Dev score is 0.960, Test score is 0.913
+--------------------------------------------------------------
+ckpt_cp_datalawyer/ckpt_of_step_10000	datalawyer	Tue Jun  8 12:07:15 2021
+@RESULT: Best Dev score is 0.952, Test score is 0.916
+--------------------------------------------------------------
+bert-base	datalawyer	Tue Jun  8 15:55:56 2021
+@RESULT: Best Dev score is 0.946, Test score is 0.896
+--------------------------------------------------------------

@@ -70,3 +70,9 @@ Namespace(adam_epsilon=1e-08, alpha=0.3, bag_size=2, batch_size_per_gpu=8, cuda=
 Wed Jun  2 21:16:01 2021
 Namespace(adam_epsilon=1e-08, alpha=0.3, bag_size=2, batch_size_per_gpu=4, cuda='0', device=device(type='cuda'), gradient_accumulation_steps=32, hidden_size=768, local_rank=-1, lr=3e-05, max_epoch=20, max_grad_norm=1, max_length=512, model='CP', model_name='neuralmind/bert-base-portuguese-cased', n_gpu=1, save_dir='ckpt_cp_datalawyer', save_step=500, seed=42, temperature=0.05, train_sample=True, warmup_steps=500, weight_decay=1e-05)
 ----------------------------------------------------------------------------
+Mon Jun  7 14:53:51 2021
+Namespace(adam_epsilon=1e-08, alpha=0.3, bag_size=2, batch_size_per_gpu=8, cuda='0', device=device(type='cuda'), gradient_accumulation_steps=2, hidden_size=768, local_rank=-1, lr=3e-05, max_epoch=20, max_grad_norm=1, max_length=512, model='CP', model_name='neuralmind/bert-base-portuguese-cased', n_gpu=1, save_dir='ckpt_cp_datalawyer', save_step=500, seed=42, temperature=0.05, train_sample=True, warmup_steps=500, weight_decay=1e-05)
+----------------------------------------------------------------------------
+Tue Jun  8 02:18:31 2021
+Namespace(adam_epsilon=1e-08, alpha=0.3, bag_size=2, batch_size_per_gpu=8, cuda='0', device=device(type='cuda'), gradient_accumulation_steps=2, hidden_size=768, local_rank=-1, lr=3e-05, max_epoch=20, max_grad_norm=1, max_length=512, model='CP', model_name='neuralmind/bert-base-portuguese-cased', n_gpu=1, save_dir='ckpt_cp_datalawyer', save_step=500, seed=42, temperature=0.05, train_sample=True, warmup_steps=500, weight_decay=1e-05)
+----------------------------------------------------------------------------
