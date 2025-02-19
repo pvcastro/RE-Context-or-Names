@@ -15,3 +15,5 @@ pretrain/data
 **/*.swp
 
 **/*.th
+/.idea/*
+/.idea/

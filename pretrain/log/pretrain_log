@@ -76,3 +76,45 @@ Namespace(adam_epsilon=1e-08, alpha=0.3, bag_size=2, batch_size_per_gpu=8, cuda=
 Tue Jun  8 02:18:31 2021
 Namespace(adam_epsilon=1e-08, alpha=0.3, bag_size=2, batch_size_per_gpu=8, cuda='0', device=device(type='cuda'), gradient_accumulation_steps=2, hidden_size=768, local_rank=-1, lr=3e-05, max_epoch=20, max_grad_norm=1, max_length=512, model='CP', model_name='neuralmind/bert-base-portuguese-cased', n_gpu=1, save_dir='ckpt_cp_datalawyer', save_step=500, seed=42, temperature=0.05, train_sample=True, warmup_steps=500, weight_decay=1e-05)
 ----------------------------------------------------------------------------
+Tue Feb 11 15:55:15 2025
+Namespace(cuda='0', lr=3e-05, batch_size_per_gpu=32, gradient_accumulation_steps=2, max_epoch=20, alpha=0.3, model='CP', model_name='neuralmind/bert-base-portuguese-cased', train_sample=True, max_length=64, bag_size=2, temperature=0.05, hidden_size=768, weight_decay=1e-05, adam_epsilon=1e-08, warmup_steps=500, max_grad_norm=1, save_step=5000, save_dir='ckpt_cp_datalawyer_bert', seed=42, local_rank=-1, device=device(type='cuda'), n_gpu=1)
+----------------------------------------------------------------------------
+Tue Feb 11 15:55:53 2025
+Namespace(cuda='0', lr=3e-05, batch_size_per_gpu=32, gradient_accumulation_steps=2, max_epoch=20, alpha=0.3, model='CP', model_name='neuralmind/bert-base-portuguese-cased', train_sample=True, max_length=64, bag_size=2, temperature=0.05, hidden_size=768, weight_decay=1e-05, adam_epsilon=1e-08, warmup_steps=500, max_grad_norm=1, save_step=5000, save_dir='ckpt_cp_datalawyer_bert', seed=42, local_rank=-1, device=device(type='cuda'), n_gpu=1)
+----------------------------------------------------------------------------
+Tue Feb 11 16:01:29 2025
+Namespace(cuda='0', lr=3e-05, batch_size_per_gpu=32, gradient_accumulation_steps=2, max_epoch=20, alpha=0.3, model='CP', model_name='neuralmind/bert-base-portuguese-cased', train_sample=True, max_length=64, bag_size=2, temperature=0.05, hidden_size=768, weight_decay=1e-05, adam_epsilon=1e-08, warmup_steps=500, max_grad_norm=1, save_step=5000, save_dir='ckpt_cp_datalawyer_bert', seed=42, local_rank=-1, device=device(type='cuda'), n_gpu=1)
+----------------------------------------------------------------------------
+Tue Feb 11 16:18:55 2025
+Namespace(cuda='0', lr=3e-05, batch_size_per_gpu=32, gradient_accumulation_steps=2, max_epoch=20, alpha=0.3, model='CP', model_name='neuralmind/bert-base-portuguese-cased', train_sample=True, max_length=64, bag_size=2, temperature=0.05, hidden_size=768, weight_decay=1e-05, adam_epsilon=1e-08, warmup_steps=500, max_grad_norm=1, save_step=5000, save_dir='ckpt_cp_datalawyer_bert', seed=42, local_rank=-1, device=device(type='cuda'), n_gpu=1)
+----------------------------------------------------------------------------
+Tue Feb 11 16:37:42 2025
+Namespace(cuda='0', lr=3e-05, batch_size_per_gpu=32, gradient_accumulation_steps=2, max_epoch=20, alpha=0.3, model='CP', model_name='neuralmind/bert-base-portuguese-cased', train_sample=True, max_length=64, bag_size=2, temperature=0.05, hidden_size=768, weight_decay=1e-05, adam_epsilon=1e-08, warmup_steps=500, max_grad_norm=1, save_step=5000, save_dir='ckpt_cp_datalawyer_bert', seed=42, local_rank=-1, device=device(type='cuda'), n_gpu=1)
+----------------------------------------------------------------------------
+Wed Feb 12 11:14:43 2025
+Namespace(cuda='0', lr=3e-05, batch_size_per_gpu=32, gradient_accumulation_steps=2, max_epoch=20, alpha=0.3, model='CP', model_name='neuralmind/bert-base-portuguese-cased', train_sample=True, max_length=64, bag_size=2, temperature=0.05, hidden_size=768, weight_decay=1e-05, adam_epsilon=1e-08, warmup_steps=500, max_grad_norm=1, save_step=5000, save_dir='ckpt_cp_datalawyer_bert', seed=42, local_rank=-1, device=device(type='cuda'), n_gpu=1)
+----------------------------------------------------------------------------
+Wed Feb 12 11:37:00 2025
+Namespace(cuda='0', lr=3e-05, batch_size_per_gpu=32, gradient_accumulation_steps=2, max_epoch=20, alpha=0.3, model='CP', model_name='neuralmind/bert-base-portuguese-cased', train_sample=True, max_length=512, bag_size=2, temperature=0.05, hidden_size=768, weight_decay=1e-05, adam_epsilon=1e-08, warmup_steps=500, max_grad_norm=1, save_step=1000, save_dir='ckpt_cp_datalawyer_bert', seed=42, local_rank=-1, device=device(type='cuda'), n_gpu=1)
+----------------------------------------------------------------------------
+Wed Feb 12 11:37:53 2025
+Namespace(cuda='0', lr=3e-05, batch_size_per_gpu=32, gradient_accumulation_steps=2, max_epoch=20, alpha=0.3, model='CP', model_name='neuralmind/bert-base-portuguese-cased', train_sample=True, max_length=512, bag_size=2, temperature=0.05, hidden_size=768, weight_decay=1e-05, adam_epsilon=1e-08, warmup_steps=500, max_grad_norm=1, save_step=1000, save_dir='ckpt_cp_datalawyer_bert', seed=42, local_rank=-1, device=device(type='cuda'), n_gpu=1)
+----------------------------------------------------------------------------
+Wed Feb 12 11:38:36 2025
+Namespace(cuda='0', lr=3e-05, batch_size_per_gpu=16, gradient_accumulation_steps=2, max_epoch=20, alpha=0.3, model='CP', model_name='neuralmind/bert-base-portuguese-cased', train_sample=True, max_length=512, bag_size=2, temperature=0.05, hidden_size=768, weight_decay=1e-05, adam_epsilon=1e-08, warmup_steps=500, max_grad_norm=1, save_step=1000, save_dir='ckpt_cp_datalawyer_bert', seed=42, local_rank=-1, device=device(type='cuda'), n_gpu=1)
+----------------------------------------------------------------------------
+Wed Feb 12 11:40:54 2025
+Namespace(cuda='0', lr=3e-05, batch_size_per_gpu=16, gradient_accumulation_steps=2, max_epoch=20, alpha=0.3, model='CP', model_name='neuralmind/bert-base-portuguese-cased', train_sample=True, max_length=512, bag_size=2, temperature=0.05, hidden_size=768, weight_decay=1e-05, adam_epsilon=1e-08, warmup_steps=500, max_grad_norm=1, save_step=1000, save_dir='ckpt_cp_datalawyer_bert', seed=42, local_rank=-1, device=device(type='cuda'), n_gpu=1)
+----------------------------------------------------------------------------
+Mon Feb 17 16:24:13 2025
+Namespace(cuda='0', lr=3e-05, batch_size_per_gpu=16, gradient_accumulation_steps=2, max_epoch=20, alpha=0.3, model='CP', model_name='neuralmind/bert-base-portuguese-cased', train_sample=True, max_length=512, bag_size=2, temperature=0.05, hidden_size=768, weight_decay=1e-05, adam_epsilon=1e-08, warmup_steps=500, max_grad_norm=1, save_step=1000, save_dir='ckpt_cp_datalawyer_bert', seed=42, local_rank=-1, device=device(type='cuda'), n_gpu=1)
+----------------------------------------------------------------------------
+Mon Feb 17 16:25:41 2025
+Namespace(cuda='0', lr=3e-05, batch_size_per_gpu=16, gradient_accumulation_steps=2, max_epoch=20, alpha=0.3, model='CP', model_name='neuralmind/bert-base-portuguese-cased', train_sample=True, max_length=512, bag_size=2, temperature=0.05, hidden_size=768, weight_decay=1e-05, adam_epsilon=1e-08, warmup_steps=500, max_grad_norm=1, save_step=1000, save_dir='ckpt_cp_datalawyer_bert', seed=42, local_rank=-1, device=device(type='cuda'), n_gpu=1)
+----------------------------------------------------------------------------
+Mon Feb 17 16:26:26 2025
+Namespace(cuda='0', lr=3e-05, batch_size_per_gpu=16, gradient_accumulation_steps=2, max_epoch=20, alpha=0.3, model='CP', model_name='neuralmind/bert-base-portuguese-cased', train_sample=True, max_length=512, bag_size=2, temperature=0.05, hidden_size=768, weight_decay=1e-05, adam_epsilon=1e-08, warmup_steps=500, max_grad_norm=1, save_step=1000, save_dir='ckpt_cp_datalawyer_bert', seed=42, local_rank=-1, device=device(type='cuda'), n_gpu=1)
+----------------------------------------------------------------------------
+Mon Feb 17 16:32:50 2025
+Namespace(cuda='0', lr=3e-05, batch_size_per_gpu=16, gradient_accumulation_steps=2, max_epoch=20, alpha=0.3, model='CP', model_name='neuralmind/bert-base-portuguese-cased', train_sample=True, max_length=512, bag_size=2, temperature=0.05, hidden_size=768, weight_decay=1e-05, adam_epsilon=1e-08, warmup_steps=500, max_grad_norm=1, save_step=1000, save_dir='ckpt_cp_datalawyer_bert', seed=42, local_rank=-1, device=device(type='cuda'), n_gpu=1)
+----------------------------------------------------------------------------

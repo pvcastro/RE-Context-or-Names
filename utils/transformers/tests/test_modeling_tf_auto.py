@@ -44,7 +44,7 @@ class TFAutoModelTest(unittest.TestCase):
     def test_model_from_pretrained(self):
         import h5py
 
-        self.assertTrue(h5py.version.hdf5_version.startswith("1.10"))
+        self.assertTrue(h5py.default_version.hdf5_version.startswith("1.10"))
 
         # for model_name in TF_BERT_PRETRAINED_MODEL_ARCHIVE_LIST[:1]:
         for model_name in ["bert-base-uncased"]:
@@ -60,7 +60,7 @@ class TFAutoModelTest(unittest.TestCase):
     def test_model_for_pretraining_from_pretrained(self):
         import h5py
 
-        self.assertTrue(h5py.version.hdf5_version.startswith("1.10"))
+        self.assertTrue(h5py.default_version.hdf5_version.startswith("1.10"))
 
         # for model_name in TF_BERT_PRETRAINED_MODEL_ARCHIVE_LIST[:1]:
         for model_name in ["bert-base-uncased"]:

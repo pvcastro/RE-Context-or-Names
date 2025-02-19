@@ -30,7 +30,7 @@ def mask_tokens(inputs, tokenizer, not_mask_pos=None):
         tokenizer.get_special_tokens_mask(val, already_has_special_tokens=True) for val in labels.tolist()
     ]
     probability_matrix.masked_fill_(torch.tensor(special_tokens_mask, dtype=torch.bool), value=0.0)
-    if tokenizer._pad_token is not None:
+    if tokenizer.pad_token is not None:
         padding_mask = labels.eq(tokenizer.pad_token_id)
         probability_matrix.masked_fill_(padding_mask, value=0.0)
     if not_mask_pos is None:
@@ -85,8 +85,9 @@ class CP(nn.Module):
         not_mask_pos[indice, t_pos] = 1
 
         m_input, m_labels = mask_tokens(input.cpu(), self.tokenizer, not_mask_pos)
-        m_outputs = self.model(input_ids=m_input, labels=m_labels, attention_mask=mask)
-        m_loss = m_outputs[0]
+        with torch.amp.autocast('cuda'):
+            m_outputs = self.model(input_ids=m_input, labels=m_labels, attention_mask=mask)
+            m_loss = m_outputs[0]
 
         outputs = m_outputs
 

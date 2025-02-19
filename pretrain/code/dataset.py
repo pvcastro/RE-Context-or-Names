@@ -41,7 +41,7 @@ class CPDataset(data.Dataset):
         """
         self.path = path 
         self.args = args 
-        data = json.load(open(os.path.join(path, "cpdata_dedup.json")))
+        data = json.load(open(os.path.join(path, "cpdata.json")))
         rel2scope = json.load(open(os.path.join(path, "rel2scope.json")))
         entityMarker = EntityMarker(args)
 

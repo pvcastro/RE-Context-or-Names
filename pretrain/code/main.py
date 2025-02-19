@@ -230,7 +230,7 @@ if __name__ == "__main__":
         train_dataset = MTBDataset("../data/MTB", args)
     elif args.model == "CP":
         model = CP(args).to(args.device)
-        train_dataset = CPDataset("../data/CP/datalawyer", args)
+        train_dataset = CPDataset("../data/CP/datalawyer/v0.24-doutorado", args)
     else:
         raise Exception("No such model! Please make sure that `model` takes the value in {MTB, CP}")
 

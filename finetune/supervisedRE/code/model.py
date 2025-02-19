@@ -42,7 +42,8 @@ class REModel(nn.Module):
         
     def forward(self, input_ids, mask, h_pos, t_pos, label):
         # bert encode
-        outputs = self.bert(input_ids, mask)
+        with torch.amp.autocast('cuda'):
+            outputs = self.bert(input_ids, mask)
 
         # entity marker
         if self.args.entity_marker:

@@ -64,7 +64,8 @@ def set_seed(args):
 
 
 def save_model(model, args):
-    save_dir = Path("../save_dir/{}".format(args.save_dir))
+    # save_dir = Path("../save_dir/{}".format(args.save_dir))
+    save_dir = Path(args.save_dir)
     if not save_dir.exists():
         save_dir.mkdir(parents=True, exist_ok=True)
     model_path = save_dir / 'model.th'
@@ -121,7 +122,8 @@ def train(args, model, train_dataloader, dev_dataloader, test_dataloader, devBag
             }
             model.training = True
             model.train()
-            loss, output = model(**inputs)
+            with torch.amp.autocast('cuda'):
+                loss, output = model(**inputs)
             if args.optim == "adamw":
                 with amp.scale_loss(loss, optimizer) as scaled_loss:
                     scaled_loss.backward()
@@ -224,7 +226,11 @@ if __name__ == "__main__":
     parser.add_argument("--batch_size_per_gpu", dest="batch_size_per_gpu", type=int,
                         default=0, help="batch size pre gpu")
     parser.add_argument("--dataset", dest="dataset", type=str,
-                        default='tacred', help='dataset to use')
+                        default='datalawyer', help='dataset to use')
+    parser.add_argument("--dataset_version", dest="dataset_version", type=str,
+                        default='0.24-doutorado', help='dataset version to use')
+    parser.add_argument("--fold", dest="fold", type=int,
+                        default=0, help='Cross Validation Fold')
     parser.add_argument("--lr", dest="lr", type=float,
                         default=3e-5, help='learning rate')
     parser.add_argument("--hidden_size", dest="hidden_size", type=int,
@@ -243,7 +249,7 @@ if __name__ == "__main__":
     parser.add_argument("--max_grad_norm", dest="max_grad_norm", type=float,
                         default=1, help="max grad norm")
     parser.add_argument("--max_length", dest="max_length", type=int,
-                        default=64, help="max sentence length")
+                        default=512, help="max sentence length")
     parser.add_argument("--ckpt_to_load", dest="ckpt_to_load", type=str,
                         default="None", help="ckpt to load")
     parser.add_argument("--save_dir", dest="save_dir", type=str,
@@ -284,23 +290,34 @@ if __name__ == "__main__":
         os.mkdir("../log")
 
     # params for dataloader
-    if args.train_prop == 1:
-        print("Use all train data!")
-        train_set = REDataset("../data/" + args.dataset, "train.txt", args)
-    elif args.train_prop == 0.1:
-        print("Use 10% train data!")
-        train_set = REDataset("../data/" + args.dataset, "train_0.1.txt", args)
-    elif args.train_prop == 0.01:
-        print("Use 1% train data!")
-        train_set = REDataset("../data/" + args.dataset, "train_0.01.txt", args)
-    dev_set = REDataset("../data/" + args.dataset, "dev.txt", args)
-    test_set = REDataset("../data/" + args.dataset, "test.txt", args)
+    if args.dataset == 'datalawyer':
+        print(f"Using train data from fold {args.fold}")
+        # train_set = REDataset(f"../data/{args.dataset}/v{args.dataset_version}/fold-{args.fold}", "train.json", args)
+        # dev_set = REDataset(f"../data/{args.dataset}/v{args.dataset_version}/fold-{args.fold}", "dev.json", args)
+        # test_set = REDataset(f"../data/{args.dataset}/v{args.dataset_version}/fold-{args.fold}", "test.json", args)
+        train_set = REDataset(f"../data/{args.dataset}/v{args.dataset_version}/fold-{args.fold}", "train.txt", args)
+        dev_set = REDataset(f"../data/{args.dataset}/v{args.dataset_version}/fold-{args.fold}", "dev.txt", args)
+        test_set = REDataset(f"../data/{args.dataset}/v{args.dataset_version}/fold-{args.fold}", "test.txt", args)
+        rel2id = json.load(open(os.path.join(f"../data/{args.dataset}/v{args.dataset_version}/fold-{args.fold}", "rel2id.json")))
+
+    else:
+        if args.train_prop == 1:
+            print("Use all train data!")
+            train_set = REDataset("../data/" + args.dataset, "train_cp.txt", args)
+        elif args.train_prop == 0.1:
+            print("Use 10% train data!")
+            train_set = REDataset("../data/" + args.dataset, "train_0.1.txt", args)
+        elif args.train_prop == 0.01:
+            print("Use 1% train data!")
+            train_set = REDataset("../data/" + args.dataset, "train_0.01.txt", args)
+        dev_set = REDataset("../data/" + args.dataset, "dev_cp.txt", args)
+        test_set = REDataset("../data/" + args.dataset, "test_cp.txt", args)
+        rel2id = json.load(open(os.path.join("../data/" + args.dataset, "rel2id.json")))
 
     train_dataloader = data.DataLoader(train_set, batch_size=args.batch_size_per_gpu, shuffle=True)
     dev_dataloader = data.DataLoader(dev_set, batch_size=args.batch_size_per_gpu, shuffle=False)
     test_dataloader = data.DataLoader(test_set, batch_size=args.batch_size_per_gpu, shuffle=False)
 
-    rel2id = json.load(open(os.path.join("../data/" + args.dataset, "rel2id.json")))
     args.rel_num = len(rel2id)
 
     model = REModel(args)

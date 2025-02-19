@@ -168,7 +168,7 @@ def convert_tensorflow(nlp: Pipeline, opset: int, output: str):
         import tensorflow as tf
         from keras2onnx import convert_keras, save_model, __version__ as k2ov
 
-        print("Using framework TensorFlow: {}, keras2onnx: {}".format(tf.version.VERSION, k2ov))
+        print("Using framework TensorFlow: {}, keras2onnx: {}".format(tf.default_version.VERSION, k2ov))
 
         # Build
         input_names, output_names, dynamic_axes, tokens = infer_shapes(nlp, "tf")
